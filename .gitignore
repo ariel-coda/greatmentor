@@ -1,41 +1,52 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ─── Dépendances ───────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# ─── Next.js ───────────────────────────────────────────
+.next/
+out/
+build/
 
-# testing
-/coverage
+# ─── Variables d'environnement ─────────────────────────
+# TRÈS IMPORTANT : ne jamais commit ces fichiers
+# ils contiennent tes clés Supabase, Google, Mistral...
+.env
+.env.local
+.env.development
+.env.production
+# .env.example est volontairement absent de cette liste
+# car c'est un fichier modèle sans vraies clés — on le commit
 
-# next.js
-/.next/
-/out/
+# ─── Python / Backend FastAPI ──────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+.pytest_cache/
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# ─── Logs ──────────────────────────────────────────────
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# ─── Éditeurs & OS ─────────────────────────────────────
+.DS_Store        # Mac
+Thumbs.db        # Windows
+.idea/           # IntelliJ / WebStorm
+.vscode/         # VS Code (optionnel, certains préfèrent le commit)
+*.swp            # Vim
 
-# vercel
-.vercel
+# ─── Stockfish (binaire local) ─────────────────────────
+backend/bin/
+backend/stockfish*
 
-# typescript
+# ─── Divers ────────────────────────────────────────────
 *.tsbuildinfo
-next-env.d.ts
+.turbo/
+coverage/
